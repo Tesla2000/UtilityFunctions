@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "utility_functions"
+version = "0.1.0"
+description = "Utility functions for python without any specific purpouse but once that are not a part of any specific library that I don't want to recreate"
+authors = ["Tesla2000 <fratajczak124@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+utility_functions = "utility_functions:main"
