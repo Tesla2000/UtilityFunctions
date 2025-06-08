@@ -1,3 +1,7 @@
+## Description
+
+Utility functions for python without any specific purpose but once that are not a part of any specific library that I don't want to recreate
+
 ## Running
 
 You can run script with docker or python
