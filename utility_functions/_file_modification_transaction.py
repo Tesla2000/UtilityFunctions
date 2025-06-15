@@ -13,11 +13,11 @@ def file_modification_transaction(
 ) -> Generator[tuple[Iterable[Path], Iterable[str]], None, None]:
     paths = map(Path, pos_args)
     if python_only:
-        paths1, paths2, paths3 = tee(paths)
-    else:
         paths1, paths2, paths3 = tee(
             filter(lambda path: path.suffix == ".py", paths)
         )
+    else:
+        paths1, paths2, paths3 = tee(paths)
     contents = map(Path.read_text, paths1)
     try:
         yield paths2, contents
