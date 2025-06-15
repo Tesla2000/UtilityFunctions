@@ -14,10 +14,10 @@ def file_modification_transaction(
     paths = map(Path, pos_args)
     if python_only:
         paths1, paths2, paths3 = tee(
-            filter(lambda path: path.suffix == ".py", paths)
+            filter(lambda path: path.suffix == ".py", paths), 3
         )
     else:
-        paths1, paths2, paths3 = tee(paths)
+        paths1, paths2, paths3 = tee(paths, 3)
     contents = map(Path.read_text, paths1)
     try:
         yield paths2, contents
